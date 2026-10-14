@@ -1,0 +1,123 @@
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char sib_mass[20] = "СибГУТИ";
+    printf("SIZEOF: %ld \nSTRLEN: %ld\nFREE_BYTES: %ld", sizeof(sib_mass), strlen(sib_mass), sizeof(sib_mass) - strlen(sib_mass) - 1);
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char word1[15];
+    char word2[15];
+    scanf("%s %s", word1, word2);
+    printf("%s-%s \nTOTAL_LEN: %ld", word1, word2, strlen(word1) + strlen(word2));
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char name[100];
+    scanf("%s", name);
+    printf("\"%s\"\n", name);
+    printf("\"%20s\"\n", name);
+    printf("\"%-20s\"\n", name);
+    printf("\"     %s     \"\n", name);
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+
+
+int main() {
+    char str[] = "\x48\x65\x6C\x6C\x6F\t\x57\x6F\x72\x6C\x64\n";
+    printf("%s", str);
+    printf("STRLEN: %ld\n", strlen(str) - 1);
+    printf("SIZEOF: %ld", sizeof(str) - 1);
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+
+
+int main() {
+    char sim;
+    scanf("%c", &sim);
+    printf("CODE_DEC: %d \nCODE_HEX: %x\nCODE_OCT: %o\nUPPER: %c\nNEXT: %c\nPREV: %c", sim, sim, sim, toupper(sim), sim + 1, sim - 1);
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    int width;
+    char text[10];
+    scanf("%d %s", &width, text);
+    printf("%*s\n", width, text);
+    printf("%-*s\n", width, text);
+    return 0;
+}
+
+#include <string.h>
+#include <stdio.h>
+
+#define text "LinuxDistro"
+const char* str = "2026" ;
+int main() {
+    printf("DISTRO:%s\nRDATE: %s\nSTRLEN: %ld\nSIZEOF: %ld", text, str, strlen(text), sizeof(text));
+    return 0;
+}
+
+
+
+#include <string.h>
+#include <wchar.h>
+#include <locale.h>
+#include <stdio.h>
+
+
+int main() {
+    setlocale(LC_ALL, "");
+    const char *str1 = "Сбой матрицы";
+    const wchar_t *str2 = L"Сбой матрицы";
+    printf("char -> sizeof: %ld bytes, strlen: %ld chars\n", (strlen(str1) + 1) * sizeof(char), strlen(str1));
+    printf("wchar -> sizeof: %ld bytes, wclen: %ld chars", (wcslen(str2) + 1) * sizeof(wchar_t), wcslen(str2));
+    return 0;
+}
+
+#include <string.h>
+#include <wchar.h>
+#include <locale.h>
+#include <stdio.h>
+
+int main() {
+    setlocale(LC_ALL, "");
+    wchar_t name[100];
+    wscanf(L"%ls", name);
+    wprintf(L"Агент %ls авторизован в системе", name);
+    return 0;
+}
+
+#include <string.h>
+#include <wchar.h>
+#include <locale.h>
+#include <stdio.h>
+
+int main() {
+    setlocale(LC_ALL, "");
+    wchar_t primero[100];
+    wchar_t segundo[100];
+    wchar_t tercero[100];
+    wscanf(L"%ls\n%ls\n%ls", primero, segundo, tercero);
+    wprintf(L"%-15ls|%20ls|%.5ls", primero, segundo,tercero);
+    return 0;
+}
