@@ -1,0 +1,8 @@
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char sib_mass[20] = "СибГУТИ";
+    printf("SIZEOF: %ld \nSTRLEN: %zd\nFREE_BYTES: %ld", sizeof(sib_mass), strlen(sib_mass), sizeof(sib_mass) - strlen(sib_mass) - 1);
+    return 0;
+}
